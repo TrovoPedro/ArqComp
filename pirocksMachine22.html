@@ -9,51 +9,20 @@
         <title>Document</title>
 </head>
 
-<body bgcolor="#00ffff">
+<body>
 
         <center>
-                <h1>Marise's Machine</h1>
-
-                <br><br>
-
                 <div class="container">
-                        <h3>Decimal</h3>
+                        <h3>Valor para conversão</h3>
                         <input id="valor_decimal" type="text" placeholder="Digite o valor">
                         <br><br>
                         <h3>Bases</h3>
                         <input type="" name="" id="valor_da_base" placeholder="Digite a base">
+                        <p class="h1">Binario = 2 | Octal = 8 | Hexadecimal = 16
+                        </p>
                         <br><br>
-
-                        <h3>converter para:</h3>
-
-
-                        <input onclick="aparecer_octal()" type="checkbox"><b>Octal</b>
-                        <br>
-                        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 15%; height: 40px; font-weight: 500;"
-                                id="demo2"></div>
-
-                        <br><br>
-
-                        <input onclick="aparecer_hexa()" type="checkbox"><b>Hexadecimal</b>
-                        <br>
-                        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(7, 7, 7); width: 15%; height: 40px; font-weight: 500;"
-                                id="demo3"></div>
-
-                        <br><br>
-
-                        <input onclick="aparecer_bin()" type="checkbox"><b>Binário</b>
-                        <br>
-                        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(5, 5, 5); width: 60%; height: 50px; font-weight: 500;"
-                                id="demo4"></div>
-
-                        <br><br>
-
 
                         <div id="demo01"></div>
-                        <div id="demo02"></div>
-                        <div id="demo03"></div>
-                        <div id="demo04"></div>
-
 
                         <button onclick="converter()">Converter</button>
         </center>
@@ -64,42 +33,28 @@
                 function converter() {
 
                         var valor = Number(valor_decimal.value);
-
                         var base = Number(valor_da_base.value)
+                        var octal = 0;
+                        var hexadecimal = 0;
+                        var binario = 0;
 
-                        var octal
-                         
-                        var hexadecimal
-
-                        var binario
-
-                        if ( base == '8'){
+                        if (base == '8') {
                                 let octal = valor.toString(8);
-
                                 demo01.innerHTML = ` ${octal}`;
                         }
 
-                        else if ( base == '16'){
+                        else if (base == '16') {
                                 let hexadecimal = valor.toString(16);
 
                                 demo01.innerHTML = ` ${hexadecimal}`;
                         }
 
-                        else if ( base == '2'){
+                        else if (base == '2') {
                                 let binario = valor.toString(2);
 
                                 demo01.innerHTML = ` ${binario}`;
                         }
-
-
-                        
-                       
-
-
-
                 }
-
-               
         </script>
 </body>
 
