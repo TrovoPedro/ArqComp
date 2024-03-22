@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
 <html lang="en">
-
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Document</title>
 </head>
-
 <body>
-
         <center>
                 <div class="container">
                         <h3>Valor para conversão</h3>
@@ -21,37 +17,28 @@
                         <p class="h1">Binario = 2 | Octal = 8 | Hexadecimal = 16
                         </p>
                         <br><br>
-
                         <div id="demo01"></div>
-
                         <button onclick="converter()">Converter</button>
         </center>
         </div>
-
         <script>
 
                 function converter() {
-
                         var valor = Number(valor_decimal.value);
                         var base = Number(valor_da_base.value)
                         var octal = 0;
                         var hexadecimal = 0;
                         var binario = 0;
-
                         if (base == '8') {
                                 let octal = valor.toString(8);
                                 demo01.innerHTML = ` ${octal}`;
                         }
-
                         else if (base == '16') {
                                 let hexadecimal = valor.toString(16);
-
                                 demo01.innerHTML = ` ${hexadecimal}`;
                         }
-
                         else if (base == '2') {
                                 let binario = valor.toString(2);
-
                                 demo01.innerHTML = ` ${binario}`;
                         }
                 }
