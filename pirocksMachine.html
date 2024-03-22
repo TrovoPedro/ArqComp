@@ -4,8 +4,8 @@
 
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         <title>Document</title>
 </head>
 
@@ -15,80 +15,91 @@
                 <h1>Marise's Machine</h1>
 
                 <br><br>
-                
 
-                <h3>Decimal</h3>
-                <input id="demo1" type="text" placeholder="Digite o valor em decimal">
+                <div class="container">
+                        <h3>Decimal</h3>
+                        <input id="valor_decimal" type="text" placeholder="Digite o valor">
+                        <br><br>
+                        <h3>Bases</h3>
+                        <input type="" name="" id="valor_da_base" placeholder="Digite a base">
+                        <br><br>
 
-                <br><br>
-
-                <h3>converter para:</h3>
+                        <h3>converter para:</h3>
 
 
-                <input onclick="aparecer_octal()" type="checkbox"><b>Octal</b>
-                <br>
-                <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 15%; height: 40px; font-weight: 500;"
-                        id="demo2"></div>
+                        <input onclick="aparecer_octal()" type="checkbox"><b>Octal</b>
+                        <br>
+                        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 15%; height: 40px; font-weight: 500;"
+                                id="demo2"></div>
 
-                <br><br>
+                        <br><br>
 
-                <input onclick="aparecer_hexa()" type="checkbox"><b>Hexadecimal</b>
-                <br>
-                <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(7, 7, 7); width: 15%; height: 40px; font-weight: 500;"
-                        id="demo3"></div>
+                        <input onclick="aparecer_hexa()" type="checkbox"><b>Hexadecimal</b>
+                        <br>
+                        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(7, 7, 7); width: 15%; height: 40px; font-weight: 500;"
+                                id="demo3"></div>
 
-                <br><br>
+                        <br><br>
 
-                <input onclick="aparecer_bin()" type="checkbox"><b>Binário</b>
-                <br>
-                <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(5, 5, 5); width: 60%; height: 50px; font-weight: 500;"
-                        id="demo4"></div>
+                        <input onclick="aparecer_bin()" type="checkbox"><b>Binário</b>
+                        <br>
+                        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(5, 5, 5); width: 60%; height: 50px; font-weight: 500;"
+                                id="demo4"></div>
 
-                <br><br>
+                        <br><br>
 
-                <button onclick="converter()">Converter</button>
+
+                        <div id="demo01"></div>
+                        <div id="demo02"></div>
+                        <div id="demo03"></div>
+                        <div id="demo04"></div>
+
+
+                        <button onclick="converter()">Converter</button>
         </center>
-
-
-
+        </div>
 
         <script>
 
                 function converter() {
 
-                        var decimal = Number(demo1.value);
+                        var valor = Number(valor_decimal.value);
 
-                        let octal = decimal.toString(8);
+                        var base = Number(valor_da_base.value)
 
-                        let hexadecimal = decimal.toString(16);
+                        var octal
+                         
+                        var hexadecimal
 
-                        let binaria = decimal.toString(2);
+                        var binario
 
-                        console.log(decimal);
-                        console.log(octal);
-                        console.log(hexadecimal);
-                        console.log(binaria);
+                        if ( base == '8'){
+                                let octal = valor.toString(8);
 
-                        document.getElementById("demo1").innerHTML = ` ${decimal}`;
-                        document.getElementById("demo2").innerHTML = ` ${octal}`;
-                        document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
-                        document.getElementById("demo4").innerHTML = ` ${binaria}`;
+                                demo01.innerHTML = ` ${octal}`;
+                        }
+
+                        else if ( base == '16'){
+                                let hexadecimal = valor.toString(16);
+
+                                demo01.innerHTML = ` ${hexadecimal}`;
+                        }
+
+                        else if ( base == '2'){
+                                let binario = valor.toString(2);
+
+                                demo01.innerHTML = ` ${binario}`;
+                        }
+
+
+                        
+                       
+
 
 
                 }
 
-                function aparecer_bin() {
-                        demo4.style.display = 'block'
-                }
-
-                function aparecer_hexa() {
-                        demo3.style.display = 'block'
-                }
-
-                function aparecer_octal() {
-                        demo2.style.display = 'block'
-                }
-                document.bgColor = "#00ffff";
+               
         </script>
 </body>
 
