@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleyi.css"> <!-- Corrigido: Adicionei o link para o arquivo CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Corrigido: Adicionei o link para o arquivo CSS -->
     <title>Documento</title>
 </head>
 
@@ -13,14 +13,14 @@
     <center>
         <div class="container">
             <h3>Valor para conversão</h3>
-            <input id="valor_decimal" type="text" placeholder="Digite o valor">
+            <input id="valor_decimal" type="text" placeholder="Digite o valor para conversão">
             <!-- <br><br> -->
             <select id="input_base" onchange="selectBase(event)">
                 <option value="2">Binário</option>
                 <option value="8">Octal</option>
                 <option value="10" selected="selected">Decimal</option>
                 <option value="16">Hexadecimal</option>
-            </select><br/>
+            </select><br />
             <br><br>
             <h3>Bases</h3>
             <select id="valor_da_base">
@@ -30,7 +30,7 @@
                 <option value="16">Hexadecimal</option>
             </select>
             <!-- <p class="h1">Binario = 2 | Octal = 8 | Hexadecimal = 16 -->
-            </p> 
+            </p>
             <br><br>
 
             <div id="demo01"></div>
@@ -38,11 +38,9 @@
             <button onclick="converter()">Converter</button>
         </div>
     </center>
-    
-
     <script>
         function converter() {
-            
+
             var valor_decimal = ('valor_decimal');
             var input_base = ('input_base');
             var valor_da_base = ('valor_da_base');
@@ -51,7 +49,6 @@
             var base_para_converter = Number(valor_da_base.value);
             var resultado = '';
 
-            
             if (base_para_converter == 10) {
                 resultado = parseInt(valor, base).toString(10);
             }
@@ -68,18 +65,17 @@
                 resultado = 'Base inválida.';
             }
 
-            document.getElementById('demo01').textContent = resultado.toUpperCase(); 
+            document.getElementById('demo01').textContent = resultado.toUpperCase();
         }
 
-        
         function selectBase(event) {
             var e = event.target;
             if (e.value === "") {
-                document.getElementById("valor_da_base").value = ""; 
+                document.getElementById("valor_da_base").value = "";
                 document.getElementById("demo01").textContent = "Selecione uma base válida.";
             }
             else {
-                document.getElementById("valor_da_base").value = e.value; 
+                document.getElementById("valor_da_base").value = e.value;
             }
         }
     </script>
